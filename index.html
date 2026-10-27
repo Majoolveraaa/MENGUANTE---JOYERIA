@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menguante | Joyería Contemporánea</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Cormorant Garamond y Josefin Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm bg-white">
+        <div class="container">
+            <!-- Botón Menú Móvil -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Logo Principal -->
+            <a class="navbar-brand mx-auto mx-lg-0 d-flex align-items-center gap-2" href="index.html">
+                <span class="logo-symbol">☾</span>
+                <span class="logo-text">MENGUANTE</span>
+            </a>
+
+            <!-- Iconos de Utilidad (Derecha) -->
+            <div class="d-flex align-items-center gap-3 order-lg-last">
+                <a href="#searchBar" class="nav-icon" title="Buscar" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="searchBar">
+                    <i class="bi bi-search"></i>
+                </a>
+                <a href="#favoritos" class="nav-icon position-relative" title="Favoritos" data-bs-toggle="modal" data-bs-target="#modalFavoritos">
+                    <i class="bi bi-heart"></i>
+                    <span id="fav-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark" style="font-size: 0.65rem;">0</span>
+                </a>
+                <!-- Icono Interactivo de Carrito -->
+                <a href="#carrito" class="nav-icon position-relative" title="Carrito de Compras" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+                    <i class="bi bi-bag"></i>
+                    <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.65rem;">0</span>
+                </a>
+                <!-- Icono de Instagram -->
+                <a href="https://instagram.com" target="_blank" class="nav-icon" title="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+                <!-- Icono de WhatsApp -->
+                <a href="https://wa.me/525532728001" target="_blank" class="nav-icon" title="WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                </a>
+            </div>
+
+            <!-- Menú de Enlaces -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav gap-lg-4 text-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">INICIO</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">TIENDA</a>
+                        <ul class="dropdown-menu border-0 shadow-sm">
+                            <li><a class="dropdown-item" href="#catalogo" data-filter="todos">Todos los productos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#catalogo" data-filter="Collar">Collares</a></li>
+                            <li><a class="dropdown-item" href="#catalogo" data-filter="Pulsera/Brazalete">Pulseras y Brazaletes</a></li>
+                            <li><a class="dropdown-item" href="#catalogo" data-filter="Aretes">Aretes</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalFavoritos">FAVORITOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">NOSOTROS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ayuda">AYUDA & FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Barra de Búsqueda Desplegable -->
+    <div class="collapse border-bottom bg-light" id="searchBar">
+        <div class="container py-3">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search"></i></span>
+                <input type="text" id="search-input" class="form-control border-start-0 shadow-none" placeholder="Buscar por nombre o material (ej. Oro laminado, Collar Bunny...)" aria-label="Buscar producto">
+            </div>
+            <small id="search-feedback" class="form-text text-muted d-block mt-2"></small>
+        </div>
+    </div>
+
+    <!-- Hero Section con Textos Arriba y Banner Horizontal Limpio (1050x420) Abajo -->
+    <header class="hero-section container py-5 text-center">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8">
+                <span class="badge-collection mb-2 d-inline-block">COLECCIÓN 'AURORA'</span>
+                <h1 class="display-4 fw-bold mb-3 text-dark">Tu luz, a tu manera</h1>
+                <p class="lead mb-4 text-secondary">Joyería contemporánea cuidadosamente seleccionada en acero inoxidable y oro laminado.</p>
+                <a href="#catalogo" class="btn btn-primary-custom px-4 py-2">Explorar el catálogo</a>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="hero-banner-horizontal position-relative shadow-sm overflow-hidden mx-auto">
+                    <img src="assets/img/BANNER INICIAL.PNG" alt="Colección Aurora Menguante" class="w-100 h-100 object-fit-cover">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Catálogo Completo de Productos -->
+    <section id="catalogo" class="py-5 border-top">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="badge-collection d-block mb-1">CATÁLOGO COMPLETO</span>
+                <h2 class="section-title" id="catalogo-titulo">Nuestra Colección</h2>
+            </div>
+
+            <!-- Contenedor dinámico del catálogo -->
+            <div class="row g-4 justify-content-center" id="products-grid">
+                <!-- Se renderiza dinámicamente desde JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartado Nosotros -->
+    <section id="nosotros" class="py-5 bg-light border-top border-bottom">
+        <div class="container py-4">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-8">
+                    <span class="badge-collection d-block mb-2">NUESTRA HISTORIA</span>
+                    <h2 class="section-title mb-3">Sobre Menguante</h2>
+                    <p class="lead fst-italic text-secondary">
+                        "Creemos que la joyería no es solo un accesorio, es un reflejo de tus propias fases, un recordatorio de tu luz interior y de cómo evolucionas cada día."
+                    </p>
+                </div>
+            </div>
+            
+            <div class="row g-4 align-items-center mb-5">
+                <div class="col-md-6">
+                    <h3 class="fw-bold mb-3">Inspiradas en tus ciclos</h3>
+                    <p class="text-muted">
+                        El nombre <strong>Menguante</strong> nace bajo la inspiración de la luna menguante: un símbolo universal de transformación, introspección, renovación y belleza atemporal. Cada una de nuestras piezas está curada pensando en la mujer contemporánea que busca versatilidad, elegancia sin esfuerzo y un toque místico en su día a día.
+                    </p>
+                    <p class="text-muted">
+                        Trabajamos principalmente con materiales duraderos como el <strong>acero inoxidable</strong> y el <strong>oro laminado</strong>, garantizando que tu joyería favorita te acompañe en cada momento sin perder su brillo.
+                    </p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div class="p-4 bg-white shadow-sm border">
+                        <span class="display-1 text-secondary">☾</span>
+                        <h4 class="logo-text mt-2 mb-0">MENGUANTE</h4>
+                        <small class="text-muted">Joyería de Autor</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pilares de la marca -->
+            <div class="row g-4 text-center mt-4">
+                <div class="col-md-4">
+                    <div class="p-4 bg-white h-100 shadow-sm">
+                        <i class="bi bi-moon-stars fs-2 text-dark mb-3 d-block"></i>
+                        <h5 class="fw-bold mb-2">Diseño con Intención</h5>
+                        <p class="small text-muted mb-0">Piezas minimalistas y en tendencia diseñadas para adaptarse a tu estilo de vida y personalidad.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white h-100 shadow-sm">
+                        <i class="bi bi-gem fs-2 text-dark mb-3 d-block"></i>
+                        <h5 class="fw-bold mb-2">Calidad y Durabilidad</h5>
+                        <p class="small text-muted mb-0">Especialistas en acero inoxidable y oro laminado de alta resistencia para uso diario.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 bg-white h-100 shadow-sm">
+                        <i class="bi bi-whatsapp fs-2 text-dark mb-3 d-block"></i>
+                        <h5 class="fw-bold mb-2">Atención Cercana</h5>
+                        <p class="small text-muted mb-0">Asesoría personalizada y directa por WhatsApp para resolver cualquier duda o pedido especial.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="#catalogo" class="btn btn-primary-custom px-4 py-2">Explorar la colección</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartado de Ayuda & FAQ -->
+    <section id="ayuda" class="py-5">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <span class="badge-collection d-block mb-1">RESOLVEMOS TUS DUDAS</span>
+                <h2 class="section-title">Ayuda & Preguntas Frecuentes</h2>
+                <p class="text-muted small">Todo lo que necesitas saber sobre nuestros materiales, envíos y compras.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion shadow-sm" id="accordionFAQ">
+                        
+                        <!-- Pregunta 1 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button fw-bold bg-white text-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    ¿La joyería se ennegrece o despinta con el agua?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-muted small">
+                                    Nuestras piezas están seleccionadas en <strong>acero inoxidable</strong> y <strong>oro laminado</strong> de alta calidad, diseñadas para ser resistentes al uso diario. Sin embargo, para prolongar al máximo su brillo y acabado original, te recomendamos evitar el contacto directo con perfumes, cloro, cremas y productos químicos agresivos.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed fw-bold bg-white text-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    ¿Qué diferencia hay entre acero inoxidable y oro laminado?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-muted small">
+                                    El <strong>acero inoxidable</strong> destaca por su alta resistencia al agua y durabilidad extrema sin perder su color natural. El <strong>oro laminado</strong> cuenta con una capa de oro real adherida a un metal base mediante presión y calor, lo que le otorga una apariencia lujosa y brillante idéntica a la alta joyería.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 3 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed fw-bold bg-white text-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    ¿A dónde realizan envíos y cómo se rastrean?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-muted small">
+                                    Realizamos envíos seguros a todo México. Una vez que tu pedido de Menguante sea recolectado por la paquetería, te enviaremos tu número de guía directamente por WhatsApp (al número <strong>5532728001</strong>) para que puedas seguir su trayecto en tiempo real.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 4 -->
+                        <div class="accordion-item border-0 border-bottom">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed fw-bold bg-white text-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    ¿Cómo realizo una compra en la tienda?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-muted small">
+                                    Puedes agregar tus piezas al <strong>Carrito de Compras</strong> directamente desde el catálogo o desde la vista detallada del producto. Al dar clic en <strong>Comprar y Pagar</strong>, se enviará tu pedido consolidado a nuestro WhatsApp.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pregunta 5 -->
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed fw-bold bg-white text-dark shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    ¿Qué métodos de pago aceptan?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFAQ">
+                                <div class="accordion-body text-muted small">
+                                    Aceptamos transferencias bancarias electrónicas y depósitos. Todos los detalles de pago se coordinan de forma segura y personalizada directamente a través de nuestra atención por WhatsApp.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL VISTA PREVIA DE PRODUCTO -->
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-labelledby="modalProductoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 rounded-0">
+                <div class="modal-header border-bottom-0 pb-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-6 text-center">
+                            <img id="modal-prod-img" src="" alt="" class="img-fluid rounded shadow-sm object-fit-cover" style="max-height: 380px; width: 100%;">
+                        </div>
+                        <div class="col-md-6">
+                            <span id="modal-prod-categoria" class="badge bg-secondary mb-2"></span>
+                            <h3 id="modal-prod-nombre" class="fw-bold mb-2"></h3>
+                            <h4 id="modal-prod-precio" class="text-dark mb-3 fw-normal"></h4>
+                            
+                            <hr class="my-3">
+
+                            <div class="mb-3">
+                                <h6 class="fw-bold mb-1"><i class="bi bi-gem me-1"></i> Material:</h6>
+                                <p id="modal-prod-material" class="text-muted mb-0"></p>
+                            </div>
+
+                            <div class="mb-3">
+                                <h6 class="fw-bold mb-1"><i class="bi bi-info-circle me-1"></i> Descripción:</h6>
+                                <p id="modal-prod-descripcion" class="text-muted small mb-0"></p>
+                            </div>
+
+                            <!-- Selector de Cantidad -->
+                            <div class="mb-3">
+                                <h6 class="fw-bold mb-2"><i class="bi bi-bag-plus me-1"></i> Cantidad:</h6>
+                                <div class="input-group input-group-sm" style="width: 130px;">
+                                    <button class="btn btn-outline-dark" type="button" id="btn-cantidad-menos">-</button>
+                                    <input type="number" id="input-cantidad" class="form-control text-center shadow-none" value="1" min="1" max="10" readonly>
+                                    <button class="btn btn-outline-dark" type="button" id="btn-cantidad-mas">+</button>
+                                </div>
+                            </div>
+
+                            <!-- Selector de Color -->
+                            <div class="mb-4" id="selector-color-container" style="display: none;">
+                                <h6 class="fw-bold mb-2"><i class="bi bi-palette me-1"></i> Color:</h6>
+                                <div class="btn-group btn-group-sm w-100" role="group" aria-label="Selección de color">
+                                    <input type="radio" class="btn-check" name="opcionColor" id="colorDorado" value="Dorado" checked>
+                                    <label class="btn btn-outline-dark" for="colorDorado">Dorado</label>
+
+                                    <input type="radio" class="btn-check" name="opcionColor" id="colorPlateado" value="Plateado">
+                                    <label class="btn btn-outline-dark" for="colorPlateado">Plateado</label>
+                                </div>
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <button id="btn-modal-add-cart" class="btn btn-outline-dark btn-sm flex-fill">
+                                    <i class="bi bi-bag-plus"></i> Agregar al Carrito
+                                </button>
+                                <a id="modal-prod-ws" href="https://wa.me/525532728001" target="_blank" class="btn btn-whatsapp btn-sm flex-fill">
+                                    <i class="bi bi-whatsapp"></i> Comprar por WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE FAVORITOS -->
+    <div class="modal fade" id="modalFavoritos" tabindex="-1" aria-labelledby="modalFavoritosLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content border-0 rounded-0">
+                <div class="modal-header border-bottom-0">
+                    <h3 class="modal-title fs-4 fw-bold d-flex align-items-center gap-2" id="modalFavoritosLabel">
+                        <i class="bi bi-heart-fill text-danger"></i> Mis Favoritos
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="lista-favoritos" class="d-flex flex-column gap-3">
+                        <p class="text-muted text-center my-4" id="fav-vacio">Aún no has añadido productos a tus favoritos.</p>
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-secondary-custom btn-sm w-100" data-bs-dismiss="modal">Seguir Explorando</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CARRITO DE COMPRAS Y APARTADO DE PAGO -->
+    <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md modal-dialog-centered">
+            <div class="modal-content border-0 rounded-0">
+                <div class="modal-header border-bottom-0">
+                    <h3 class="modal-title fs-4 fw-bold d-flex align-items-center gap-2" id="modalCarritoLabel">
+                        <i class="bi bi-bag-check-fill text-dark"></i> Carrito de Compras
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div id="lista-carrito" class="d-flex flex-column gap-3 mb-4">
+                        <p class="text-muted text-center my-4" id="cart-vacio">Tu carrito de compras está vacío.</p>
+                    </div>
+
+                    <!-- Resumen del Pedido -->
+                    <div id="resumen-compra" class="border-top pt-3" style="display: none;">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="fw-bold">Total a Pagar:</span>
+                            <span id="cart-total" class="fw-bold fs-5 text-dark">$0.00 MXN</span>
+                        </div>
+                        <small class="text-muted d-block mb-3">* El pago se coordina directamente por WhatsApp vía transferencia o depósito.</small>
+                        <a id="btn-checkout-ws" href="https://wa.me/525532728001" target="_blank" class="btn btn-whatsapp w-100 py-2 fw-bold">
+                            <i class="bi bi-whatsapp me-2"></i> Comprar y Pagar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Institucional -->
+    <footer class="footer-custom text-white py-5">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="logo-text mb-3">MENGUANTE</h5>
+                    <p class="small text-secondary">Joyería minimalista diseñada para evolucionar contigo.</p>
+                </div>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h6 class="text-uppercase fw-bold mb-3">Enlaces Rápidos</h6>
+                    <ul class="list-unstyled small">
+                        <li><a href="#ayuda" class="footer-link">Preguntas Frecuentes</a></li>
+                        <li><a href="#nosotros" class="footer-link">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-uppercase fw-bold mb-3">Contacto & Redes</h6>
+                    <p class="small text-secondary mb-2"><i class="bi bi-whatsapp"></i> Asesoría y Pedidos por WhatsApp</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://instagram.com" target="_blank" class="btn btn-outline-light btn-sm"><i class="bi bi-instagram"></i> Instagram</a>
+                        <a href="https://wa.me/525532728001" target="_blank" class="btn btn-whatsapp btn-sm"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary">
+            <div class="text-center small text-secondary">
+                &copy; 2026 MENGUANTE Joyería de Autor. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Script Personalizado -->
+    <script src="js/script.js"></script>
+</body>
+</html>
